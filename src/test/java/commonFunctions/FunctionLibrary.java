@@ -35,12 +35,12 @@ public static WebDriver driver;
 			return driver;
 		}
 		//method for launching url
-		public static void openUrl()
+		public static WebDriver openUrl()
 		{
 			driver.get(conpro.getProperty("url"));
 		}
 		//method for wait to any element
-		public static void waitForElement(String LocatorType,String LocatorValue,String TestData)
+		public static WebDriver waitForElement(String LocatorType,String LocatorValue,String TestData)
 		{
 			WebDriverWait mywait = new WebDriverWait(driver, Duration.ofSeconds(Integer.parseInt(TestData)));
 			if(LocatorType.equalsIgnoreCase("xpath"))
@@ -60,7 +60,7 @@ public static WebDriver driver;
 			}
 		}
 		//method for any textbox
-		public static void typeAction(String LocatorType,String LocatorValue,String TestData)
+		public static WebDriver typeAction(String LocatorType,String LocatorValue,String TestData)
 		{
 			if(LocatorType.equalsIgnoreCase("xpath"))
 			{
@@ -79,7 +79,7 @@ public static WebDriver driver;
 			}
 		}
 		//method for buttons,checkbox,radiobutton,images,links
-		public static void clickAction(String LocatorType,String LocatorValue)
+		public static WebDriver clickAction(String LocatorType,String LocatorValue)
 		{
 			if(LocatorType.equalsIgnoreCase("xpath"))
 			{
@@ -95,7 +95,7 @@ public static WebDriver driver;
 			}
 		}
 		//method for validate page title
-		public static void validateTitle(String Expected_Title)
+		public static WebDriver validateTitle(String Expected_Title)
 		{
 			String Actual_title = driver.getTitle();
 			try {
@@ -106,7 +106,7 @@ public static WebDriver driver;
 			}
 		}
 		//method for close browser
-		public static void closeBrowser()
+		public static WebDriver closeBrowser()
 		{
 			driver.quit();
 		}
